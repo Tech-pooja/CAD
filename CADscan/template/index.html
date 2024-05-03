@@ -1,0 +1,205 @@
+{%  extends 'base.html' %}
+
+{% block title %}Prediction{% endblock title %}
+
+{% block body %}
+<div style="margin-left: 30%;">
+<form  action="/index", method="POST">
+
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="HTN_1" class="col-sm-2 col-form-label">HTN_1</label>
+      <div class="col-sm-5">
+        <input type="number" class="form-control" name="HTN_1" id="HTN_1" placeholder="HTN_1">
+      </div>
+    </div>
+
+
+
+    <div class="form-group row">
+      <label for="Typical_Chest_Pain_1" class="col-sm-2 col-form-label">Typical_Chest_Pain_1</label>
+      <div class="col-sm-5">
+        <input type="number" class="form-control" name="Typical_Chest_Pain_1" id="Typical_Chest_Pain_1" placeholder="Typical_Chest_Pain_1">
+      </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Atypical_1" class="col-sm-2 col-form-label">Atypical_1</label>
+        
+            <select name="Atypical_1" id="Atypical_1">
+                    <option value="1">Y</option>
+                    <option value="0">N</option>    
+            </select>
+      </div>
+
+      <div class="form-group row">
+        <label for="Age" class="col-sm-2 col-form-label">Age</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="Age" id="Age" placeholder="Age">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Weight" class="col-sm-2 col-form-label">Weight</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="Weight"  id="Weight" placeholder="Weight">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="BMI" class="col-sm-2 col-form-label">BMI</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="BMI" id="BMI" placeholder="BMI">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="BP" class="col-sm-2 col-form-label">BP</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="BP" id="BP" placeholder="BP">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="FBS" class="col-sm-2 col-form-label">FBS</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="FBS" id="FBS" placeholder="FBS">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="CR" class="col-sm-2 col-form-label">CR</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="CR" id="CR" placeholder="CR">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="TG" class="col-sm-2 col-form-label">TG</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="TG" id="TG" placeholder="TG">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="LDL" class="col-sm-2 col-form-label">LDL</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="LDL" id="LDL" placeholder="LDL">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="HDL" class="col-sm-2 col-form-label">HDL</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="HDL" id="HDL" placeholder="HDL">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="ESR" class="col-sm-2 col-form-label">ESR</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="ESR" id="ESR" placeholder="ESR">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="HB" class="col-sm-2 col-form-label">HB</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="HB" id="HB" placeholder="HB">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="K" class="col-sm-2 col-form-label">K</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="K" id="K" placeholder="K">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="WBC" class="col-sm-2 col-form-label">WBC</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="WBC" id="WBC" placeholder="WBC">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Lymph" class="col-sm-2 col-form-label">Lymph</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="Lymph" id="Lymph" placeholder="Lymph">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="PLT" class="col-sm-2 col-form-label">PLT</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="PLT" id="PLT" placeholder="PLT">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="EF-TTE" class="col-sm-2 col-form-label">EF-TTE</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="EF_TTE" id="EF-TTE" placeholder="EF-TTE">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="Region_RWMA" class="col-sm-2 col-form-label">Region_RWMA</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" name="Region_RWMA" id="Region_RWMA" placeholder="Region_RWMA">
+        </div>
+      </div>
+
+
+
+      <fieldset class="form-group">
+
+        <div class="row">
+          <legend class="col-form-label col-sm-2 pt-0">Classifier</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="classifier" id="KNN" value="KNN" checked>
+              <label class="form-check-label" for="KNN">
+                KNN
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="classifier" id="SVM" value="SVM">
+              <label class="form-check-label" for="SVM">
+                SVM
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="classifier" id="RF" value="RF">
+              <label class="form-check-label" for="RF">
+                RF
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      
+
+    
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Predict</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+
+<br><br>
+<h2 style="margin-left: 30%;color: red">
+    {% if output %}
+         {{output}}
+    {% endif %}
+
+
+</h2>
+
+
+{% endblock body %}
